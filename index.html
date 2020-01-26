@@ -61,8 +61,9 @@
 
   			<nav class="header-nav">
   				<ul>
-  					<!-- HRef для текущей страницы пуст -->
-  					<li><a href="">Главная</a></li>
+  					<!-- Пересмотрев скринкаст, нашел ошибку. Для текущего расположения, HRef для
+  					ссылки не указывается -->
+  					<li><a>Главная</a></li>
   					<li><a href="">Компания</a></li>
   					<li><a href="">Каталог</a></li>
   					<li><a href="">Новости</a></li>
@@ -74,13 +75,206 @@
   		</section>
   	</header>
 
-  	<!-- В задании указано не верстать контентную и сервисную часть макета -->
+  	<main>
+  		<section class="promo">
+  			<h2 class="hidden">Промо-блок</h2>
+  			<ul>
+  				<!-- Иконки и фоновый цвет будут заданы в "background". -->
+  				<li class="promo-cell">
+  					<img class="product-marking-new" src="" alt="Метка нового товара">
+  					<p>Материалы</p>
+  					<a class="promo-cell-link" href="">На любой вкус</a>
+  				</li>
+  				<li class="promo-cell">
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<p>Инструмент</p>
+  					<a class="promo-cell-link" href="">На все случаи</a>
+  				</li>
+  				<li class="promo-cell">
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<p>Техника</p>
+  					<a class="promo-cell-link" href="">Для стройки</a>
+  				</li>
+  				<li class="promo-cell promo-slider">
+  					<ul class="promo-slider-list">
+  						<li class="promo-slider-list-item current-slide">
+  							<h2 class="promo-slider-list-title">Дрели</h2>
+  							<p class="promo-slider-list-title-add">Соседям на радость!</p>
+  							<button class="promo-slider-list-bw" type="button" aria-label="Назад"></button>
+  							<button class="promo-slider-list-fw" type="button" aria-label="Вперед"></button>
+  							<a href="catalog.html">Открыть каталог</a>
+  						</li>
+  						<li class="promo-slider-list-item hidden">
+  							<h2 class="promo-slider-list-title">Перфораторы</h2>
+  							<p class="promo-slider-list-title-add">Настоящие мужские игрушки</p>
+  							<button class="promo-slider-list-bw" type="button" aria-label="Назад"></button>
+  							<button class="promo-slider-list-fw" type="button" aria-label="Вперед"></button>
+  							<a href="catalog.html">Открыть каталог</a>
+  						</li>
+  					</ul>
+  				</li>
+  				<li class="promo-cell">
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<p>Скидки 50%</p>
+  					<a class="promo-cell-link" href="">На 350 товаров</a>
+  				</li>
+  				<li class="promo-cell">
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<p>Доставка</p>
+  					<a class="promo-cell-link" href="">Бесплатно</a>
+  				</li>
+  			</ul>  			
+  		</section>
+
+  		<section class="popular-products">
+  			<div class="title-wrapper">
+  				<h1 class="title">Популярные товары</h1>
+  				<a class="title-link popular-products-all" href="">Все популярные товары</a>
+  			</div>
+
+  			<ul class="popular-products-list">
+  				<li>
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<img class="product-photo" src="" alt="Фотография товара">
+  					<button class="product-btn-buy hidden" type="button">Купить</button>
+  					<button class="product-btn-marking hidden" type="button">В закладки</button>
+  					<p class="product-name">Перфоратор BOSCH BFG 9000</p>
+  					<del class="product-old-price">32500 Р.</del>
+  					<p class="product-actual-price">25500 Р.</p>
+  				</li>
+  				<li>
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<img class="product-photo" src="" alt="Фотография товара">
+  					<button class="product-btn-buy hidden" type="button">Купить</button>
+  					<button class="product-btn-marking hidden" type="button">В закладки</button>
+  					<p class="product-name">Перфоратор BOSCH BFG 3000</p>
+  					<del class="product-old-price">22500 Р.</del>
+  					<p class="product-actual-price">15500 Р.</p>
+  				</li>
+  				<li>
+  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<img class="product-photo" src="" alt="Фотография товара">
+  					<button class="product-btn-buy hidden" type="button">Купить</button>
+  					<button class="product-btn-marking hidden" type="button">В закладки</button>
+  					<p class="product-name">Перфоратор BOSCH BFG 6000</p>
+  					<del class="product-old-price">30500 Р.</del>
+  					<p class="product-actual-price">25500 Р.</p>
+  				</li>
+  				<li>
+  					<img class="product-marking-new" src="" alt="Метка нового товара">
+  					<img class="product-photo" src="" alt="Фотография товара">
+  					<button class="product-btn-buy hidden" type="button">Купить</button>
+  					<button class="product-btn-marking hidden" type="button">В закладки</button>
+  					<p class="product-name">Перфоратор BOSCH BFG 2000</p>
+  					<del class="product-old-price hidden"></del>
+  					<p class="product-actual-price">12500 Р.</p>
+  				</li>
+  			</ul>
+  		</section>
+
+  		<section class="popular-devs">
+  			<div class="title-wrapper">
+  				<h1 class="title"></h1>
+  				<a class="title-link popular-devs-all" href="">Все производители</a>
+  			</div>
+
+  			<ul class="popular-devs-list">
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип BOSCH">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип Makita">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип DeWalt">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип ИНТЕРСКОЛ">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип HITACHI">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип LG">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип AEG Power Solutions">
+  					</a>
+  				</li>
+  				<li class="popular-devs-list-item">
+  					<a href="">
+  						<img class="dev-label" src="" alt="Логотип metabo">
+  					</a>
+  				</li>
+  			</ul>
+  		</section>
+  	</main>
 
   	<!-- Верстаю в виде артикля, потому что данная информация не относится к контентному
-  	содержанию страницы (стороняя информация), также как и сервис доставки -->
+  	содержанию страницы (стороняя информация) -->
+
+  	<article class="services">
+  		<h2 class="services-title">Сервисы</h2>
+  		<p class="sevices-paragraph">
+  			Хороший интернет-магазин отличается от плохого не только ценами!<br>
+				Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
+  		</p>
+  		<div class="services-slider-wrapper">
+  			<ul>
+  				<li><button class="services-slider-btn delivery" type="button">Доставка</button></li>
+  				<li><button class="services-slider-btn guarantee" type="button">Гарантия</button></li>
+  				<li><button class="services-slider-btn credit" type="button">Кредит</button></li>
+  			</ul>
+
+  			<ul>
+  				<!-- Иконки будут отображаться через background -->
+  				<li class="services-slider-item-delivery">
+  					<h2 class="services-slider-item-title">Доставка</h2>
+  					<p>
+  						Мы с удовольствием доставим ваш товар прямо<br> 
+							к вашему подъезду совершенно бесплатно!<br>							
+							Ведь мы неплохо заработаем,<br> 
+							поднимая его на ваш этаж!
+  					</p>	
+  				</li>
+  				<li class="services-slider-item-guarantee hidden">
+  					<h2 class="services-slider-item-title">Гарантия</h2>
+  					<p>
+  						Если купленный у нас товар поломается или заискрит,<br> 
+							а также в случае пожара, спровоцированного его возгоранием,<br>
+							вы всегда можете быть уверены в нашей	гарантии. Мы обменяем<br>
+							сгоревший товар на новый.<br>
+							Дом уж восстановите как-нибудь сами.
+  					</p>
+  				</li>
+  				<li class="services-slider-item-credit hidden">
+  					<h2 class="services-slider-item-title">Кредит</h2>
+  					<p>
+  						Залезть в долговую яму стало проще!<br> 
+							Кредитные консультанты придут вам на помощь.
+  					</p>
+  					<a class="services-slider-send-entry" href="">Отправить заявку</a>
+  				</li>
+  			</ul>
+  		</div>
+  	</article>
+
   	<article class="about-us">
   		<div class="about-us-leftside">
-  			<h2 class="about-us-company-name">Компания &laquo;Техномарт&raquo;</h2>
+  			<h2 class="about-us-title">Компания &laquo;Техномарт&raquo;</h2>
   			<p class="about-us-paragraph">
   				Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и<br>строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.<br>
   				<br>

@@ -88,14 +88,22 @@
   		</a></li>
   		<li><a href="">Каталог</a></li>
   		<li><a href="">Инструмент</a></li>
-  		<li>Перфораторы</li>
+  		<li><a>Перфораторы</a></li>
   	</ul>
 
   	<main>
-  		<h1>Перфораторы</h1>
+  		<h1 class="title catalog">Перфораторы</h1>
 
   		<aside>
-  			<!-- В соответствии с заданием "фильтр" не верстается. -->
+  			<h3 class="aside-func-title">Фильтр:</h3>
+  			<h3 class="aside-filter-price-title">Цена:</h3>
+  			<!-- Интерактивный элемент формы. -->
+  			<span class="aside-filter-price-input-range"></span>
+  			<p class="aside-filter-price-min">0</p>
+  			<span class="aside-filter-price-decor">—</span>
+  			<p class="aside-filter-price-max">30000</p>
+  			<hr>
+
   			<h2 class="aside-developers">Производители:</h2>
   			<!-- Интерактивные элементы формы. -->
   			<span class="aside-dev-input">BOSCH</span>
@@ -114,8 +122,17 @@
 
   		<section class="product-list">
   			<h2 class="hidden">Список товаров</h2>
-  			<!-- В соответствии с заданием "сортировка" не верстается.
-  			Список предполагаю реализовать с помощью Flex. -->
+  			<h3 class="product-list-func-title">Сортировка:</h3>
+  			<ul>
+  				<li class="product-list-sort-by-price">По цене</li>
+  				<li class="product-list-sort-by-type">По типу</li>
+  				<li class="product-list-sort-by-functionality">По функционалу</li>
+  			</ul>
+  			<!-- Иконки будут заданы в виде background -->
+  			<button class="product-list-up" type="button" aria-label="Вверх по списку"></button>
+  			<button class="product-list-down" type="button" aria-label="Вниз по списку"></button>
+
+  			<!-- Список предполагаю реализовать с помощью Flex. -->
   			<ul class="list">
   				<li>
   					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
@@ -214,7 +231,23 @@
   					<del class="product-old-price hidden"></del>
   					<p class="product-actual-price">12500 Р.</p>
   				</li>
-  			</ul>  			
+  			</ul> 
+  			
+  			<ul class="product-list-pagination">
+  				<li class="product-list-pagination-item current-page"><a>1</a></li>
+  				<li class="product-list-pagination-item"><a href="">2</a></li>
+  				<li class="product-list-pagination-item"><a href="">3</a></li>
+  				<li class="product-list-pagination next-page"><a href="">Следующая</a></li>
+  			</ul>
+
+  			<section class="about-perforators">
+  				<h2 class="about-perforators-title">Пара слов о перфораторах</h2>
+  				<p class="about-perforators-paragraph">
+  					Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>
+						Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка.<br> 
+						В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.
+  				</p>
+  			</section> 			
   		</section>
   	</main>
 
