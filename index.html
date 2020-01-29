@@ -5,20 +5,109 @@
     <title>Техномарт</title>
   </head>
   <body>
+  	<style>
+  		/* Т.к. большая часть иконок светлого цвета, использую серый фон для наглядности */
+  		
+  		/* Некоторые иконки меняют цвет. Для этого в папке "img" имеются экземпляры для
+  		состояния покоя/клика и наведения. Изменение значения "src" полагаю делать через JS. */
+
+  		/* Прошу не судить строго реализацию. Многое здесь задано временно для демонстрации
+  		работы с графикой в условиях бекграунда. По мере учебы подход будет улучшаться. */
+  		body {
+  			background-color: #aaa;
+  		}
+
+  		/* FLAG "NEW" POSITION */
+
+  		.product-marking-new {
+  			position: absolute;
+  			top: 0;
+  			right: 0;
+  		}
+
+  		/* PROMO CELLS */
+
+  		.promo-cell {
+  			position: relative;
+  			height: 123px;
+  			width: 300px;
+  		}
+
+  		.promo-upside-list .promo-cell:nth-child(1) {
+  			background: url("img/promo/promo_1.png") 212px 30px no-repeat #ffbf47;
+  		}
+
+  		.promo-upside-list .promo-cell:nth-child(2) {
+  			background: url("img/promo/promo_2.png") 197px 33px no-repeat #3bbce3;
+  		}
+
+  		.promo-upside-list .promo-cell:nth-child(3) {
+  			background: url("img/promo/promo_3.png") 190px 31px no-repeat #dc91d8;
+  		}
+
+  		.promo-downside-list .promo-cell:nth-child(1) {
+  			background: url("img/promo/promo_4.png") 196px 26px no-repeat #8ed78f;
+  		}
+
+  		.promo-downside-list .promo-cell:nth-child(2) {
+  			background: url("img/promo/promo_5.png") 191px 32px no-repeat #ffc047;
+  		}
+
+  		/* PROMO SLIDER */
+
+  		.promo-slider-item {
+  			height: 266px;
+  			width: 621px;
+  		}
+
+  		.promo-slider-item:nth-child(1) {
+  			background: url("img/promo/slider/slider_perforators.jpg") no-repeat;
+  		}
+
+  		.promo-slider-item:nth-child(2) {
+  			background: url("img/promo/slider/slider_drills.jpg") no-repeat;
+  		}
+
+  		/* POPULAR PRODUCTS */
+
+  		.product-cell {
+  			position: relative;
+  			height: 318px;
+  			width: 220px;
+  		}
+
+  		.product-actual-price {
+  			height: 38px;
+  			width: 141px;
+  			background: url("img/products/misc/bg_price.svg") no-repeat;
+  		}
+
+  		/* SERVICES' SLIDER */
+
+  		.services-slider {
+  			height: 522px;
+  			width: 1200px;
+  			/* Изменение параметров будет осуществляться через JS для каждого слайда. */
+  			background: url("img/services_slider/delivery.png") 601px bottom no-repeat #f4f7f9;
+  		}
+  	</style>
+
   	<header>
   		<div class="header-upside">
-  			<img class="header-logo" src="" alt="Логотип &laquo;Техномарт&raquo;">
+  			<!-- Как ты и сказал, оборачиваю логотип в ссылку. Ссылка без HRef, так как это
+  			текущая страница. -->
+  			<a>
+  				<img class="header-logo" src="img/logo_technomart.svg" alt="Логотип &laquo;Техномарт&raquo;">
+  			</a>
   			<div class="header-search-wrapper">
-  				<img class="header-search-icon header-icons" src="" alt="Иконка поиска">
+  				<img class="header-search-icon header-icons" src="img/icons/icons_inter/icon_search_(calm, hover).svg" alt="Иконка поиска">
   				<input class="header-search-input" type="text" placeholder="Поиск:">
   			</div>
 
   			<ul class="header-user-indicators">
-  				<!-- В ТЗ элементы не определены. Делаю на свое усмотрение в виде ссылок,
-  				которые могут ввести на страницы "закладок" и "корзины". -->
   				<li>
   					<a class="header-marking" href="">
-  						<img class="header-mark-icon header-icons" src="" alt="Иконка закладок">
+  						<img class="header-mark-icon header-icons" src="img/icons/icons_inter/icon_bookmark.svg" alt="Иконка закладок">
   						<p class="header-mark-indicating">Закладки: 
   							<span class="header-mark-indicator">0</span>
   						</p>
@@ -26,7 +115,7 @@
   				</li>
   				<li>
   					<a class="header-basket" href="">
-  						<img class="header-basket-icon header-icons" src="" alt="Иконка корзины">
+  						<img class="header-basket-icon header-icons" src="img/icons/icons_inter/icon_cart.svg" alt="Иконка корзины">
   						<p class="header-basket-indicating">Корзина: 
   							<span class="header-basket-indicator">0</span>
   						</p>
@@ -46,16 +135,15 @@
   			
   			<div class="header-site-contacts-wrapper">
   				<div class="header-contacts-tel">
-  					<img class="header-tel-icon" src="" alt="Иконка телефона">
+  					<img class="header-tel-icon" src="img/icons/icon_phone.svg" alt="Иконка телефона">
   					<p class="header-tel-number">+7 (812) 555-05-55</p>
   				</div>
   				<p class="header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
   			</div>
 
   			<div class="header-login-wrapper">
-  				<!-- В ТЗ элемент не определен. Делаю ссылкой на страницы логина и регистрации. -->
   				<a class="header-login" href="">
-  					<img class="header-login-icon" src="" alt="Иконка входа на сайт">
+  					<img class="header-login-icon" src="img/icons/icons_inter/icon_login_(calm, click).svg" alt="Иконка входа на сайт">
   					<p>Войти</p>
   				</a>
   				<a class="header-reg" href="">Регистрация</a>
@@ -95,17 +183,17 @@
   			<ul class="promo-upside-list">
   				<!-- Иконки и фоновый цвет будут заданы в "background". -->
   				<li class="promo-cell">
-  					<img class="product-marking-new" src="" alt="Метка нового товара">
+  					<img class="product-marking-new" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
   					<p>Материалы</p>
   					<a class="promo-cell-link" href="">На любой вкус</a>
   				</li>
   				<li class="promo-cell">
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
   					<p>Инструмент</p>
   					<a class="promo-cell-link" href="">На все случаи</a>
   				</li>
   				<li class="promo-cell">
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
   					<p>Техника</p>
   					<a class="promo-cell-link" href="">Для стройки</a>
   				</li>
@@ -113,31 +201,31 @@
   			
   			<!-- Дмитрий, я правильно все понял по слайдеру? -->
   			<div class="promo-downside-wrapper">
-  				<ul class="promo-slider">
-  					<li class="promo-slider-item current-slide">
+  				<div class="promo-slider">
+  					<div class="promo-slider-item current-slide">
   						<h2 class="promo-slider-title">Дрели</h2>
   						<p class="promo-slider-title-add">Соседям на радость!</p>
   						<button class="promo-slider-bw" type="button" aria-label="Назад"></button>
   						<button class="promo-slider-fw" type="button" aria-label="Вперед"></button>
   						<a class="promo-slider-open-catalog" href="catalog.html">Открыть каталог</a>
-  					</li>
-  					<li class="promo-slider-item hidden">
+  					</div>
+  					<div class="promo-slider-item hidden">
   						<h2 class="promo-slider-title">Перфораторы</h2>
   						<p class="promo-slider-title-add">Настоящие мужские игрушки</p>
   						<button class="promo-slider-bw" type="button" aria-label="Назад"></button>
   						<button class="promo-slider-fw" type="button" aria-label="Вперед"></button>
   						<a class="promo-slider-open-catalog" href="catalog.html">Открыть каталог</a>
-  					</li>
-  				</ul>
+  					</div>
+  				</div>
 
   				<ul class="promo-downside-list">
   					<li class="promo-cell">
-  						<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  						<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
   						<p>Скидки 50%</p>
   						<a class="promo-cell-link" href="">На 350 товаров</a>
   					</li>
   					<li class="promo-cell">
-  						<img class="product-marking-new hidden" src="" alt="Метка нового товара">
+  						<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
   						<p>Доставка</p>
   						<a class="promo-cell-link" href="">Бесплатно</a>
   					</li>
@@ -152,9 +240,9 @@
   			</div>
 
   			<div class="popular-products-list">
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 9000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 9000</h2>
@@ -162,9 +250,9 @@
   					<p class="product-actual-price">25500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 3000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 3000</h2>
@@ -172,9 +260,9 @@
   					<p class="product-actual-price">15500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 6000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 6000</h2>
@@ -182,9 +270,9 @@
   					<p class="product-actual-price">25500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 2000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 2000</h2>
@@ -200,45 +288,47 @@
   				<a class="title-link popular-devs-all" href="">Все производители</a>
   			</div>
 
+  			<!-- В процентах указано степень качества JPG-файлов. В среднем сжатие составляло
+  			половину веса от оригинала, без визуального ухудшения качества. -->
   			<ul class="popular-devs-list">
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип BOSCH">
+  						<img class="dev-label" src="img/brands/bosch_(50%).jpg" alt="Логотип BOSCH">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип Makita">
+  						<img class="dev-label" src="img/brands/makita_(60%).jpg" alt="Логотип Makita">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип DeWalt">
+  						<img class="dev-label" src="img/brands/dewalt_(50%).jpg" alt="Логотип DeWalt">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип ИНТЕРСКОЛ">
+  						<img class="dev-label" src="img/brands/interskol_(60%).jpg" alt="Логотип ИНТЕРСКОЛ">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип HITACHI">
+  						<img class="dev-label" src="img/brands/hitachi_(60%).jpg" alt="Логотип HITACHI">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип LG">
+  						<img class="dev-label" src="img/brands/lg_(60%).jpg" alt="Логотип LG">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип AEG Power Solutions">
+  						<img class="dev-label" src="img/brands/aeg_(40%).jpg" alt="Логотип AEG Power Solutions">
   					</a>
   				</li>
   				<li class="popular-devs-list-item">
   					<a href="">
-  						<img class="dev-label" src="" alt="Логотип metabo">
+  						<img class="dev-label" src="img/brands/metabo_(70%).jpg" alt="Логотип metabo">
   					</a>
   				</li>
   			</ul>
@@ -263,9 +353,9 @@
   					</li>
   				</ul>
 
-  				<ul>
-  					<!-- Иконки будут отображаться через background -->
-  					<li class="services-slider-item-delivery">
+  				<!-- Слайдер изменен в соответствии со слайдером выше -->
+  				<div class="services-slider">
+  					<div class="services-slider-item-delivery">
   						<h2 class="services-slider-item-title">Доставка</h2>
   						<p>
   							Мы с удовольствием доставим ваш товар прямо<br> 
@@ -273,8 +363,8 @@
   							Ведь мы неплохо заработаем,<br> 
   							поднимая его на ваш этаж!
   						</p>	
-  					</li>
-  					<li class="services-slider-item-guarantee hidden">
+  					</div>
+  					<div class="services-slider-item-guarantee hidden">
   						<h2 class="services-slider-item-title">Гарантия</h2>
   						<p>
   							Если купленный у нас товар поломается или заискрит,<br> 
@@ -283,16 +373,16 @@
   							сгоревший товар на новый.<br>
   							Дом уж восстановите как-нибудь сами.
   						</p>
-  					</li>
-  					<li class="services-slider-item-credit hidden">
+  					</div>
+  					<div class="services-slider-item-credit hidden">
   						<h2 class="services-slider-item-title">Кредит</h2>
   						<p>
   							Залезть в долговую яму стало проще!<br> 
   							Кредитные консультанты придут вам на помощь.
   						</p>
   						<a class="services-slider-send-entry" href="">Отправить заявку</a>
-  					</li>
-  				</ul>
+  					</div>
+  				</div>
   			</div>
   		</section>
 
@@ -311,7 +401,6 @@
   					<li>Автотрейдинг</li>
   					<li>ЖелДорЭкспедиция</li>
   				</ul>
-  				<!-- В ТЗ элемент не определен. Делаю ссылкой, которая ведет на страницу "О Компании". -->
   				<a class="about-us-link" href="">Подробнее о компании</a>
   			</article>
 
@@ -322,7 +411,7 @@
   					заехав в наш офис:
   				</p>
   				<a href="https://www.google.ru/maps">
-  					<img class="about-us-map" src="" alt="Компания &laquo;Техномарт&raquo; на карте">
+  					<img class="about-us-map" src="img/map/map_mini_(60%).jpg" alt="Компания &laquo;Техномарт&raquo; на карте">
   				</a>
   				<button class="about-us-btn-write-us" type="button">Заблудились? Напишите нам!</button>
   			</article>
@@ -332,7 +421,7 @@
   	<footer>
   		<div class="footer-upside">
   			<div class="footer-wrapper">
-  				<img class="footer-logo" src="" alt="Логотип &laquo;Техномарт&raquo;">
+  				<img class="footer-logo" src="img/logo_technomart.svg" alt="Логотип &laquo;Техномарт&raquo;">
   				<p>
   					г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
   					+7 (812) 555-05-55
@@ -383,13 +472,13 @@
 
   			<ul class="footer-social">
   				<li>
-  					<a href=""><img class="footer-social-vk" src="" alt="Иконка ВКонтакте"></a>
+  					<a href=""><img class="footer-social-vk" src="img/icons/social/vk.svg" alt="Иконка ВКонтакте"></a>
   				</li>
   				<li>
-  					<a href=""><img class="footer-social-fb" src="" alt="Иконка Facebook"></a>
+  					<a href=""><img class="footer-social-fb" src="img/icons/social/fb.svg" alt="Иконка Facebook"></a>
   				</li>
   				<li>
-  					<a href=""><img class="footer-social-insta" src="" alt="Иконка Instagram"></a>
+  					<a href=""><img class="footer-social-insta" src="img/icons/social/insta.svg" alt="Иконка Instagram"></a>
   				</li>
   			</ul>
 

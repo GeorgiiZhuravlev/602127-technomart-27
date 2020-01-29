@@ -5,22 +5,72 @@
 		<title>Техномарт</title>
 	</head>
 	<body>
+		<style>
+  		/* Т.к. большая часть иконок светлого цвета, использую серый фон для наглядности */
+  		
+  		/* Некоторые иконки меняют цвет. Для этого в папке "img" имеются экземпляры для
+  		состояния покоя/клика и наведения. Изменение значения "src" полагаю делать через JS. */
+
+  		/* Прошу не судить строго реализацию. Многое здесь задано временно для демонстрации
+  		работы с графикой в условиях бекграунда. По мере учебы подход будет улучшаться. */
+  		body {
+  			background-color: #aaa;
+  		}
+
+  		/* FLAG "NEW" POSITION */
+
+  		.product-marking-new {
+  			position: absolute;
+  			top: 0;
+  			right: 0;
+  		}
+
+  		/* PRODUCT LIST */
+
+  		.product-list-up,
+  		.product-list-down {
+  			height: 11px;
+  			width: 10px;
+  		}
+
+  		.product-list-up {
+  			background: url("img/icons/icons_inter/icon_up-dir_(inactive).svg") no-repeat;
+  		}
+
+  		.product-list-down {
+  			background: url("img/icons/icons_inter/icon_down-dir_(calm).svg") no-repeat;
+  		}
+
+  		.product-cell {
+  			position: relative;
+  			height: 318px;
+  			width: 220px;
+  		}
+
+  		/* Скорее всего это очень безграмотно (хотя могу ошибаться), но я временно 
+  		задал высоту и ширину инлайновому элементу. Мне кажется, здесь нужен блочный элемент. 
+  		Если не прав, пожалуйста, поправьте. */
+  		.product-actual-price {
+  			height: 38px;
+  			width: 141px;
+  			background: url("img/products/misc/bg_price.svg") no-repeat;
+  		}
+  	</style>
+
 		<header>
   		<div class="header-upside">
   			<a href="index.html">
-  				<img class="header-logo" src="" alt="Логотип &laquo;Техномарт&raquo;">
+  				<img class="header-logo" src="img/logo_technomart.svg" alt="Логотип &laquo;Техномарт&raquo;">
   			</a>
   			<div class="header-search-wrapper">
-  				<img class="header-search-icon header-icons" src="" alt="Иконка поиска">
+  				<img class="header-search-icon header-icons" src="img/icons/icons_inter/icon_search_(calm, hover).svg" alt="Иконка поиска">
   				<input class="header-search-input" type="text" placeholder="Поиск:">
   			</div>
 
   			<ul class="header-user-indicators">
-  				<!-- В ТЗ элементы не определены. Делаю на свое усмотрение в виде ссылок,
-  				которые могут ввести на страницы "закладок" и "корзины". -->
   				<li>
   					<a class="header-marking" href="">
-  						<img class="header-mark-icon header-icons" src="" alt="Иконка закладок">
+  						<img class="header-mark-icon header-icons" src="img/icons/icons_inter/icon_bookmark.svg" alt="Иконка закладок">
   						<p class="header-mark-indicating">Закладки: 
   							<span class="header-mark-indicator">0</span>
   						</p>
@@ -28,7 +78,7 @@
   				</li>
   				<li>
   					<a class="header-basket" href="">
-  						<img class="header-basket-icon header-icons" src="" alt="Иконка корзины">
+  						<img class="header-basket-icon header-icons" src="img/icons/icons_inter/icon_cart.svg" alt="Иконка корзины">
   						<p class="header-basket-indicating">Корзина: 
   							<span class="header-basket-indicator">10</span>
   						</p>
@@ -48,7 +98,7 @@
   			
   			<div class="header-site-contacts-wrapper">
   				<div class="header-contacts-tel">
-  					<img class="header-tel-icon" src="" alt="Иконка телефона">
+  					<img class="header-tel-icon" src="img/icons/icon_phone.svg" alt="Иконка телефона">
   					<p class="header-tel-number">+7 (812) 555-05-55</p>
   				</div>
   				<p class="header-address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
@@ -57,11 +107,11 @@
   			<div class="header-login-wrapper">
   				<div>
   					<a href="">
-  						<img class="header-login-user-icon" src="" alt="Иконка пользователя">
+  						<img class="header-login-user-icon" src="img/icons/icons_inter/icon_user_(calm, click).svg" alt="Иконка пользователя">
   						<p class="header-login-username">Равшан Джамшутович</p>
   					</a>
   					<a href="">
-  						<img class="header-logout" src="" alt="Иконка выхода">
+  						<img class="header-logout" src="img/icons/icons_inter/icon_logout_(calm, click).svg" alt="Иконка выхода">
   					</a>
   				</div>
   				<a href="">Мои заказы</a>
@@ -100,7 +150,7 @@
   	<ul class="breadcrumbs">
   		<li>
   			<a href="index.html">
-  				<img class="breadcrumbs-home-icon" src="" alt="Иконка главной страницы">
+  				<img class="breadcrumbs-home-icon" src="img/icons/icon_home.svg" alt="Иконка главной страницы">
   			</a>
   		</li>
   		<li>
@@ -151,15 +201,14 @@
   				<li class="product-list-sort-by-type">По типу</li>
   				<li class="product-list-sort-by-functionality">По функционалу</li>
   			</ul>
-  			<!-- Иконки будут заданы в виде background -->
   			<button class="product-list-up" type="button" aria-label="Вверх по списку"></button>
   			<button class="product-list-down" type="button" aria-label="Вниз по списку"></button>
 
   			<!-- Список предполагаю реализовать с помощью Flex. -->
   			<div class="list">
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 3000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 3000</h2>
@@ -167,9 +216,9 @@
   					<p class="product-actual-price">15500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 6000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 6000</h2>
@@ -177,9 +226,9 @@
   					<p class="product-actual-price">25500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new" src="" alt="Метка нового товара">
-  					<img class="product-photo hidden" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo hidden" src="img/products/products_perforator_bosch bfg 2000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy" type="button">Купить</button>
   					<button class="product-btn-marking" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 2000</h2>
@@ -187,9 +236,9 @@
   					<p class="product-actual-price">12500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 3000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 3000</h2>
@@ -197,9 +246,9 @@
   					<p class="product-actual-price">15500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 6000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 6000</h2>
@@ -207,9 +256,9 @@
   					<p class="product-actual-price">25500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 2000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 2000</h2>
@@ -217,9 +266,9 @@
   					<p class="product-actual-price">12500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 3000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 3000</h2>
@@ -227,9 +276,9 @@
   					<p class="product-actual-price">15500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 6000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 6000</h2>
@@ -237,9 +286,9 @@
   					<p class="product-actual-price">25500 Р.</p>
   				</article>
 
-  				<article>
-  					<img class="product-marking-new hidden" src="" alt="Метка нового товара">
-  					<img class="product-photo" src="" alt="Фотография товара">
+  				<article class="product-cell">
+  					<img class="product-marking-new hidden" src="img/products/misc/icon_new.svg" alt="Метка нового товара">
+  					<img class="product-photo" src="img/products/products_perforator_bosch bfg 2000.jpg" alt="Фотография товара">
   					<button class="product-btn-buy hidden" type="button">Купить</button>
   					<button class="product-btn-marking hidden" type="button">В закладки</button>
   					<h2 class="product-name">Перфоратор BOSCH BFG 2000</h2>
@@ -277,7 +326,7 @@
   	<footer>
   		<div class="footer-upside">
   			<div class="footer-wrapper">
-  				<img class="footer-logo" src="" alt="Логотип &laquo;Техномарт&raquo;">
+  				<img class="footer-logo" src="img/logo_technomart.svg" alt="Логотип &laquo;Техномарт&raquo;">
   				<p>
   					г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
   					+7 (812) 555-05-55
@@ -328,13 +377,13 @@
 
   			<ul class="footer-social">
   				<li>
-  					<a href=""><img class="footer-social-vk" src="" alt="Иконка ВКонтакте"></a>
+  					<a href=""><img class="footer-social-vk" src="img/icons/social/vk.svg" alt="Иконка ВКонтакте"></a>
   				</li>
   				<li>
-  					<a href=""><img class="footer-social-fb" src="" alt="Иконка Facebook"></a>
+  					<a href=""><img class="footer-social-fb" src="img/icons/social/fb.svg" alt="Иконка Facebook"></a>
   				</li>
   				<li>
-  					<a href=""><img class="footer-social-insta" src="" alt="Иконка Instagram"></a>
+  					<a href=""><img class="footer-social-insta" src="img/icons/social/insta.svg" alt="Иконка Instagram"></a>
   				</li>
   			</ul>
 
