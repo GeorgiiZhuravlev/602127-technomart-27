@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+*:focus {
+	outline: 2px solid #e8cd00;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	/* temp */ background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+button {
+	cursor: pointer;
+}
