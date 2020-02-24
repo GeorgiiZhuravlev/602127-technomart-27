@@ -5,7 +5,7 @@
 	<title>Техномарт: Главная страница</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&display=swap&subset=cyrillic-ext">
+	<link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext">
 </head>
 <body>
@@ -22,13 +22,13 @@
     				<path fill="#231F20" d="M17 15.586l-3.542-3.542A7.465 7.465 0 0 0 15 7.5 7.5 7.5 0 1 0 7.5 15c1.71 0 3.282-.579 4.544-1.542L15.586 17 17 15.586zM2 7.5C2 4.467 4.467 2 7.5 2 10.532 2 13 4.467 13 7.5c0 3.032-2.468 5.5-5.5 5.5A5.506 5.506 0 0 1 2 7.5z"/>
 					</svg>
 				</label>
-				<a class="btn-header" href="" aria-label="Перейти к закладкам">
+				<a class="btn-header" id="header_bookmarks" href="" aria-label="Перейти к закладкам">
 					<img src="img/icons/icons_inter/icon_bookmark.svg" width="14" height="16" aria-hidden="true" alt="">
-					<p>Закладки: <span>0</span></p>
+					<p>Закладки: <span id="header_bookmark-count">0</span></p>
 				</a>
-				<a class="btn-header" href="" aria-label="Перейти к корзине">
+				<a class="btn-header" id="header_basket" href="" aria-label="Перейти к корзине">
 					<img src="img/icons/icons_inter/icon_cart.svg" width="15" height="15" aria-hidden="true" alt="">
-					<p>Корзина: <span>0</span></p>
+					<p>Корзина: <span id="header_basket-count">0</span></p>
 				</a>
 				<a class="btn-header _order" href="">Оформить заказ</a>
 			</div>
@@ -92,14 +92,14 @@
 					</li>
 					<li>
 						<article class="promo-feature-item _instruments">
-							<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+							<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 							<h2>Инструмент</h2>
 							<a class="btn-standart _promo" href="" aria-label="Инструмент на все случаи">На все случаи</a>
 						</article>
 					</li>
 					<li>
 						<article class="promo-feature-item _technic">
-							<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+							<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 							<h2>Техника</h2>
 							<a class="btn-standart _promo" href="" aria-label="Техника для стройки">Для стройки</a>
 						</article>
@@ -108,45 +108,45 @@
 
 				<div class="promo-wrapper">
 					<div class="promo-slider">
-						<div class="promo-slider_item _drills">
-							<h3 class="promo-slider_title">Дрели</h3>
-							<p class="promo-slider_subtitle">Соседям на радость!</p>
-						</div>
-						<div class="promo-slider_item _perforators _vis-off">
-							<h3 class="promo-slider_title">Перфораторы</h3>
-							<p class="promo-slider_subtitle">Настоящие мужские игрушки</p>
+						<input class="promo-slider_input _slider1 visually-hidden" id="promo-slider_input1" type="radio" name="slider-page" checked>
+						<input class="promo-slider_input _slider2 visually-hidden" id="promo-slider_input2" type="radio" name="slider-page">
+
+						<ul class="promo-slider_item-list">
+							<li class="promo-slider_item-list-li">
+								<div class="promo-slider_item _drills">
+									<h3 class="promo-slider_title">Дрели</h3>
+									<p class="promo-slider_subtitle">Соседям на радость!</p>
+								</div>
+							</li>
+							<li class="promo-slider_item-list-li">
+								<div class="promo-slider_item _perforators">
+									<h3 class="promo-slider_title">Перфораторы</h3>
+									<p class="promo-slider_subtitle">Настоящие мужские игрушки</p>
+								</div>
+							</li>
+						</ul>
+
+						<div class="promo-slider_pagination">
+							<label for="promo-slider_input1" class="promo-slider_page"></label>
+							<label for="promo-slider_input2" class="promo-slider_page"></label>
 						</div>
 
 						<button class="promo-slider_btn _bw" type="button" aria-label="Слайдер назад"></button>
 						<button class="promo-slider_btn _fw" type="button" aria-label="Слайдер вперед"></button>
 						<a class="btn-standart _red _slider" href="catalog.html">Открыть каталог</a>
-						<ul class="promo-slider_pagination">
-							<li>
-								<label class="promo-slider_page">
-									<input class="visually-hidden" type="radio" name="slider-page" value="1" checked>
-									<span class="promo-slider_indicator"></span>
-								</label>
-							</li>
-							<li>
-								<label class="promo-slider_page">
-									<input class="visually-hidden" type="radio" name="slider-page" value="2">
-									<span class="promo-slider_indicator"></span>
-								</label>
-							</li>
-						</ul>
-					</div>
+					</div>							
 
 					<ul class="promo-features _vertical">
 						<li>
 							<article class="promo-feature-item _discount">
-								<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+								<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 								<h2>Скидки 50%</h2>
 								<a class="btn-standart _promo" href="" aria-label="Скидка 50% на 350 товаров">На 350 товаров</a>
 							</article>
 						</li>
 						<li>
 							<article class="promo-feature-item _delivery">
-								<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+								<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 								<h2>Доставка</h2>
 								<a class="btn-standart _promo" href="" aria-label="Доставка бесплатно">Бесплатно</a>
 							</article>
@@ -166,7 +166,7 @@
 				<ul class="popular-products_list">
 					<li>
 						<article class="product-article" tabindex="0">
-							<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+							<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 							<img class="product-article_img" src="img/products/products_perforator_bosch-bfg-9000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 9000">
 							<div class="product-article_ui">
 								<button class="product-article_ui-btn _buy" type="button" aria-label="Купить выбранный товар">
@@ -183,7 +183,7 @@
 					</li>
 					<li>
 						<article class="product-article" tabindex="0">
-							<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+							<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 							<img class="product-article_img" src="img/products/products_perforator_bosch-bfg-3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
 							<div class="product-article_ui">
 								<button class="product-article_ui-btn _buy" type="button" aria-label="Купить выбранный товар">
@@ -200,7 +200,7 @@
 					</li>
 					<li>
 						<article class="product-article" tabindex="0">
-							<img class="flag-new" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
+							<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 							<img class="product-article_img" src="img/products/products_perforator_bosch-bfg-6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
 							<div class="product-article_ui">
 								<button class="product-article_ui-btn _buy" type="button" aria-label="Купить выбранный товар">
@@ -231,7 +231,7 @@
 								<p class="product-article_actual-price">12500 Р.</p>
 							</div>
 						</article>
-					</li>
+					</li>					
 				</ul>
 			</div>
 		</section>
@@ -266,7 +266,7 @@
 					</li>
 					<li>
 						<a class="popular-devs_item" href="">
-							<img src="img/brands/hitachi.jpg" width="169" height="31" alt="Ссылка на официальный сайт производителя Хитачи">
+							<img src="img/brands/hitachi.jpg" width="143" height="31" alt="Ссылка на официальный сайт производителя Хитачи">
 						</a>
 					</li>
 					<li>
@@ -276,12 +276,12 @@
 					</li>
 					<li>
 						<a class="popular-devs_item" href="">
-							<img src="img/brands/aeg.jpg" width="151" height="96" alt="Ссылка на официальный сайт производителя АЕГ">
+							<img src="img/brands/aeg.jpg" width="140" height="68" alt="Ссылка на официальный сайт производителя АЕГ">
 						</a>
 					</li>
 					<li>
 						<a class="popular-devs_item" href="">
-							<img src="img/brands/metabo.jpg" width="204" height="69" alt="Ссылка на официальный сайт производителя Метабо">
+							<img src="img/brands/metabo.jpg" width="156" height="67" alt="Ссылка на официальный сайт производителя Метабо">
 						</a>
 					</li>
 				</ul>
@@ -289,7 +289,7 @@
 		</section>
 
 		<section class="services size-full _content-center">
-			<div class="services size-content _delivery">
+			<div class="services size-content">
 				<h2 class="services_title">Сервисы</h2>
 				<p class="services_subtitle">
 					Хороший интернет-магазин отличается от плохого не только ценами!<br>
@@ -297,52 +297,57 @@
 				</p>
 
 				<div class="services-slider-wrapper">
-					<ul class="services-switcher">
+					<input class="services-switcher_input _delivery visually-hidden" id="services-slider_input1" type="radio" name="services-slider-switcher" aria-label="Слайдер 1 из 3: Доставка" checked>
+					<input class="services-switcher_input _guarantee visually-hidden" id="services-slider_input2" type="radio" name="services-slider-switcher" aria-label="Слайдер 2 из 3: Гарантия">
+					<input class="services-switcher_input _credit visually-hidden" id="services-slider_input3" type="radio" name="services-slider-switcher" aria-label="Слайдер 3 из 3: Кредит">
+
+					<div class="services-slider_switcher-list">
+						<label for="services-slider_input1" class="services-slider_btn">Доставка</label>
+						<label for="services-slider_input2" class="services-slider_btn">Гарантия</label>
+						<label for="services-slider_input3" class="services-slider_btn">Кредит</label>
+					</div>
+
+					<ul class="services-slider_item-list">
 						<li>
-							<input class="services-switcher_input visually-hidden" id="services-slider-switcher-delivery" type="radio" name="services-slider-switcher" value="delivery" tabindex="-1" checked>
-							<label class="services-switcher_item" for="services-slider-switcher-delivery" aria-label="Переключить слайдер на раздел Доставка" tabindex="0">Доставка</label>
+							<div class="services-slider_item">
+								<h3 class="services-slider_title">Доставка</h3>
+								<p class="services-slider_subtitle">
+									Мы с удовольствием доставим ваш товар прямо<br> 
+									к вашему подъезду совершенно бесплатно!<br>
+									Ведь мы неплохо заработаем,<br> 
+									поднимая его на ваш этаж!
+								</p>
+							</div>
 						</li>
 						<li>
-							<input class="services-switcher_input visually-hidden" id="services-slider-switcher-guarantee" type="radio" name="services-slider-switcher" value="guarantee" tabindex="-1">
-							<label class="services-switcher_item" for="services-slider-switcher-guarantee" aria-label="Переключить слайдер на раздел Гарантия" tabindex="0">Гарантия</label>
+							<div class="services-slider_item">
+								<h3 class="services-slider_title">Гарантия</h3>
+								<p class="services-slider_subtitle">
+									Если купленный у нас товар поломается или заискрит,<br> 
+									а также в случае пожара, спровоцированного его возгоранием,<br> 
+									вы всегда можете быть уверены в нашей гарантии. Мы обменяем<br>
+									сгоревший товар на новый.<br> 
+									Дом уж восстановите как-нибудь сами.
+								</p>
+							</div>
 						</li>
 						<li>
-							<input class="services-switcher_input visually-hidden" id="services-slider-switcher-credit" type="radio" name="services-slider-switcher" value="credit" tabindex="-1">
-							<label class="services-switcher_item" for="services-slider-switcher-credit" aria-label="Переключить слайдер на раздел Кредит" tabindex="0">Кредит</label>
+							<div class="services-slider_item">
+								<h3 class="services-slider_title">Кредит</h3>
+								<p class="services-slider_subtitle">
+									Залезть в долговую яму стало проще!<br> 
+									Кредитные консультанты придут вам на помощь.
+								</p>
+								<a class="btn-standart _red _services-slider _offset" href="">Отправить заявку</a>
+							</div>
 						</li>
 					</ul>
 
-					<div class="services-slider">
-						<div class="services-slider_item">
-							<h3 class="services-slider_title">Доставка</h3>
-							<p class="services-slider_subtitle">
-								Мы с удовольствием доставим ваш товар прямо<br> 
-								к вашему подъезду совершенно бесплатно!<br>
-								Ведь мы неплохо заработаем,<br> 
-								поднимая его на ваш этаж!
-							</p>
-						</div>
-
-						<div class="services-slider_item _vis-off">
-							<h3 class="services-slider_title">Гарантия</h3>
-							<p class="services-slider_subtitle">
-								Если купленный у нас товар поломается или заискрит,<br> 
-								а также в случае пожара, спровоцированного его возгоранием,<br> 
-								вы всегда можете быть уверены в нашей гарантии. Мы обменяем<br>
-								сгоревший товар на новый.<br> 
-								Дом уж восстановите как-нибудь сами.
-							</p>
-						</div>
-
-						<div class="services-slider_item _vis-off">
-							<h3 class="services-slider_title">Кредит</h3>
-							<p class="services-slider_subtitle">
-								Залезть в долговую яму стало проще!<br> 
-								Кредитные консультанты придут вам на помощь.
-							</p>
-							<a class="services-slider_btn btn-standart _red _services-slider" href="">Отправить заявку</a>
-						</div>
-					</div>
+					<ul class="services-slider_bg-list">
+						<li class="services-slider_bg-item _delivery"></li>
+						<li class="services-slider_bg-item _guarantee"></li>
+						<li class="services-slider_bg-item _credit"></li>
+					</ul>
 				</div>
 			</div>
 		</section>
@@ -383,11 +388,11 @@
 						заехав в наш офис:
 					</p>
 
-					<button class="about-us_btn-map" type="button" onclick="OpenMap()">
+					<button class="about-us_btn-map" id="modal-map_open" type="button">
 						<img src="img/map/map_mini.jpg" width="300" height="158" alt="Открыть полноразмерную карту. Магазин Техномарт находится по адресу: город Санкт-Петербург, улица Большая Конюшенная, дом 19 дробь 8">
 					</button>
 
-					<button class="btn-standart _red _about-us2" type="button" onclick="OpenFeedback()">Заблудились? Напишите нам!</button>
+					<a class="btn-standart _red _about-us2" id="modal-feedback_open" href="" type="button">Заблудились? Напишите нам!</a>
 				</div>
 			</div>
 		</section>
@@ -480,38 +485,55 @@
 		</div>
 	</footer>
 
-	<div class="modal _bg-off visually-hidden" id="modal_map">
+	<div class="modal _bg-off _vis-off" id="modal_map">
 		<section class="modal-map size-content">
 			<h2 class="visually-hidden">Полноразмерная карта</h2>
-			<button class="btn-cross _modal" type="button" aria-label="Закрыть полноразмерную карту" onclick="CloseMap()"></button>
-			<img class="modal-map_map" src="img/map/map_full.jpg" width="940" height="446" alt="город Санкт-Петербург, улица Большая Конюшенная, дом 19 дробь 8">
+			<button class="btn-cross _modal" id="modal-map_close" type="button" aria-label="Закрыть полноразмерную карту"></button>
+			<iframe class="modal-map_map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d856e93dd55dbb3d9c2c927b9d71ce0b08c25766e1c8177388b5b4cdb6cc9b5&amp;source=constructor" width="940" height="447" frameborder="0"></iframe>
 		</section>
 	</div>
 
-	<div class="modal _bg-off visually-hidden" id="modal_feedback">
+	<div class="modal _bg-off _vis-off" id="modal_feedback">
 		<section class="modal _window modal-feedback">
 			<h2 class="visually-hidden">Написать нам</h2>
-			<button class="btn-cross _modal" type="button" aria-label="Закрыть форму обратной связи" onclick="CloseFeedback()"></button>
+			<button class="btn-cross _modal" id="modal-feedback_close" type="button" aria-label="Закрыть форму обратной связи"></button>
 
 			<form class="modal _body modal-feedback-form" id="modal-feedback_form" method="post" action="" name="write-us" autocomplete="on">
 				<label class="modal-feedback_inter" for="modal-feedback-username">Ваше имя:<br>
-					<input id="modal-feedback-username" type="text" name="user-name" placeholder="Имя Фамилия">
+					<input id="modal-feedback-username" type="text" name="user-name" placeholder="Имя Фамилия" required>
 				</label>
 
 				<label class="modal-feedback_inter" for="modal-feedback-user-email">Ваш e-mail:<br>
-					<input id="modal-feedback-user-email" type="email" name="user-email" placeholder="email@example.com">
+					<input id="modal-feedback-user-email" type="email" name="user-email" placeholder="email@example.com" required>
 				</label>
 
 				<label class="modal-feedback_inter" for="modal-feedback-user-text">Текст письма:<br>
-					<textarea id="modal-feedback-user-text" name="user-text" placeholder="В свободной форме"></textarea>
+					<textarea id="modal-feedback-user-text" name="user-text" placeholder="В свободной форме" required></textarea>
 				</label>
 			</form>
 			<div class="modal _panel">
-				<button class="btn-standart _red _modal" form="modal-feedback_form" type="submit" aria-label="Отправить письмо">Отправить</button>
+				<button class="btn-standart _red _modal" form="modal-feedback_form" id="modal-feedback_submit" type="submit" aria-label="Отправить письмо">Отправить</button>
 			</div>
 		</section>
 	</div>
 
-	<script src="js/scripts.js"></script>
+	<div class="modal _bg-off _vis-off" id="modal_basket-alert">
+		<section class="modal _window">
+			<button class="btn-cross _modal" id="modal-basket-alert_close" type="button" aria-label="Закрыть окно оповещения о добавление товара в корзину"></button>
+			<div class="modal _body modal-alert">
+				<img class="modal-alert_icon" src="img/icons/icon_confirmed.svg" width="66" height="66" alt="Товар добавлен в карзину">
+				<h2 class="modal-alert_title">Товар добавлен в корзину!</h2>
+			</div>
+			<div class="modal _panel">
+				<a class="btn-standart _red _modal" href="">Оформить заказ</a>
+				<button class="btn-standart _white _modal" id="modal-basket-alert_continue" type="button">Продолжить покупки</button>
+			</div>
+		</section>
+	</div>
+
+	<script src="js/modal-windows_index.js"></script>
+	<script src="js/modal-window_basket.js"></script>
+	<script src="js/promo-slider_index.js"></script>
+	<script src="js/count.js"></script>
 </body>
 </html>
