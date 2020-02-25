@@ -18,14 +18,16 @@ for (let i = 0; i < btnBuy.length; i++) {
 	btnBookmark[i].addEventListener('click', BookmarkCount); 
 }
 
-function BasketCount() {
+function BasketCount(evt) {
+	evt.preventDefault();
 	indicBasket.innerHTML = parseInt(indicBasket.innerHTML) + 1;
 	if (indicBasket.innerHTML > 0) {
 		linkBasket.classList.add('_active');
 	}
 }
 
-function BookmarkCount() {
+function BookmarkCount(evt) {
+	evt.preventDefault();
 	indicBookmarks.innerHTML = parseInt(indicBookmarks.innerHTML) + 1;
 	if (indicBookmarks.innerHTML > 0) {
 		linkBookmarks.classList.add('_active');

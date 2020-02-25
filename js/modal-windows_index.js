@@ -18,7 +18,10 @@ function OpenModal(evt) {
 	evt.stopPropagation();
 	if (evt.currentTarget.id) {
 		switch (evt.currentTarget.id) {
-			case 'modal-map_open': modalMap.classList.remove('_vis-off'); break;
+			case 'modal-map_open':
+				evt.preventDefault();
+				modalMap.classList.remove('_vis-off');
+				btn_mapClose.focus(); break;
 			case 'modal-feedback_open':
 				evt.preventDefault();
 				modalFeedback.classList.remove('_vis-off');

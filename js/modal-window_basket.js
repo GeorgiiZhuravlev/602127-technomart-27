@@ -6,7 +6,8 @@ var modalBasketAlert = document.querySelector('#modal_basket-alert');
 // Buttons
 var btns_buy = document.querySelectorAll('.product-article_ui-btn._buy'),
 		btn_basketClose = document.querySelector('#modal-basket-alert_close'),
-		btn_basketContinue = document.querySelector('#modal-basket-alert_continue');
+		btn_basketContinue = document.querySelector('#modal-basket-alert_continue'),
+		btn_basketOrder = document.querySelector('#modal-basket-alert_order');
 
 // Opening
 for (let i = 0; i < btns_buy.length; i++) {
@@ -15,7 +16,9 @@ for (let i = 0; i < btns_buy.length; i++) {
 
 function OpenModal(evt) {
 	evt.stopPropagation();
+	evt.preventDefault();
 	modalBasketAlert.classList.remove('_vis-off');
+	btn_basketOrder.focus();
 }
 
 // Closing

@@ -23,14 +23,17 @@ rain { some values }; - одноименный класс
 }
 
 .size-full._content-center {
-	display: flex;
+/*	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: center;*/
+	min-width: 960px;
+	padding: 0 10px;
 } 
 
 .size-content {
 	width: 940px;
 	min-width: 940px;
+	margin: 0 auto;
 }
 
 .visually-hidden {
@@ -283,7 +286,7 @@ rain { some values }; - одноименный класс
 .btn-authorization._no-log-in {
 	margin-left: 10px;
 	margin-bottom: 10px;
-	padding: 10px 25px;
+	padding: 10px 24px;
 }
 
 .btn-authorization._no-log-in:first-child {
@@ -292,7 +295,7 @@ rain { some values }; - одноименный класс
 
 .btn-authorization._logged-in {
 	width: 100%;
-	padding: 10px 11px 10px 25px;
+	padding: 10px 11px 10px 14px;
 }
 
 .btn-authorization._logged-in p {
@@ -370,8 +373,12 @@ rain { some values }; - одноименный класс
 	width: 300px;
 }
 
+.authorization_profile-icon {
+	margin-right: 14px;
+}
+
 .authorization_login-icon {
-	margin: 0 14px 0 -11px;
+	margin: 0 14px 0 -10px;
 }
 
 .authorization_login-icon path {
@@ -601,6 +608,10 @@ rain { some values }; - одноименный класс
 	border-radius: 3px;
 }
 
+.filter-devs_checkbox:hover {
+	border-color: #b5b5b5;
+}
+
 .filter-devs_input:checked + .filter-devs_checkbox::before {
 	content: "";
 	position: absolute;
@@ -625,6 +636,11 @@ rain { some values }; - одноименный класс
 	background-color: #c5c5c5;
 }
 
+.filter-devs_input:disabled + .filter-devs_checkbox {
+	border-color: #b5b5b5;
+	opacity: 0.3;
+}
+
 .filter-power_radio {
 	display: block;
 	width: 25px;
@@ -639,12 +655,15 @@ rain { some values }; - одноименный класс
 	box-shadow: inset 0 0 0 4px #ffffff;
 }
 
-.filter-devs_checkbox:hover {
+.filter-devs_input:hover {
 	border-color: #b5b5b5;
 }
 
-/* "!important" использован для перезаписи свойства "background-color" для псевдоэлементов */
+.filter-devs_input:focus + .filter-devs_checkbox {
+	outline: 2px solid #e8cd00;
+}
 
+/* "!important" использован для перезаписи свойства "background-color" для псевдоэлементов */
 .filter-devs_checkbox:hover::before,
 .filter-devs_checkbox:hover::after  {
 	background-color: #b5b5b5 !important;
@@ -656,6 +675,22 @@ rain { some values }; - одноименный класс
 
 .filter-power_input:checked + .filter-power_radio:hover {
 	background-color: #b5b5b5;
+}
+
+.filter-power_input:focus + .filter-power_radio {
+	outline: 2px solid #e8cd00;
+}
+
+.filter-power_input:disabled + .filter-power_radio {
+	border-color: #b5b5b5;
+	opacity: 0.3;
+}
+
+.filter-power_input:checked:disabled + .filter-power_radio {
+	background-color: #b5b5b5;
+	border-color: #b5b5b5;
+	box-shadow: inset 0 0 0 4px #ffffff;
+	opacity: 0.3;
 }
 
 .filter-range {
@@ -761,9 +796,30 @@ rain { some values }; - одноименный класс
 	cursor: pointer;
 }
 
+.sort-type_item:hover + label,
+.sort-type_item:focus + label {
+	color: #000000;
+	text-decoration: underline;
+	text-decoration-color: #ee3643;
+}
+
+.sort-type_item:focus + label {
+	outline: 2px solid #e8cd00;
+}
+
 .sort-type_item:checked + label {
 	color: #ee3643;
 	text-decoration: none;
+}
+
+.sort-type_item:disabled + label {
+	color: rgba(0, 0, 0, 0.3);
+	text-decoration: line-through;
+}
+
+.sort-type_item:checked:disabled + label {
+	color: #ee3643;
+	text-decoration: line-through;
 }
 
 .sort-control {
@@ -984,11 +1040,11 @@ rain { some values }; - одноименный класс
 }
 
 .promo-slider_item._drills {
-	background: url("../img/promo/slider/slider_drills.jpg") no-repeat;
+	background: url("../img/promo/slider/slider_drills.jpg") no-repeat #938d86;
 }
 
 .promo-slider_item._perforators {
-	background: url("../img/promo/slider/slider_perforators.jpg") no-repeat;
+	background: url("../img/promo/slider/slider_perforators.jpg") no-repeat #938d86;
 }
 
 .promo-slider_item-list {
@@ -1037,6 +1093,13 @@ rain { some values }; - одноименный класс
 .promo-slider_input._slider1:focus ~ .promo-slider_pagination .promo-slider_page:nth-child(1),
 .promo-slider_input._slider2:focus ~ .promo-slider_pagination .promo-slider_page:nth-child(2) {
 	outline: 2px solid #e8cd00;
+}
+
+.promo-slider_input._slider1:disabled ~ .promo-slider_pagination .promo-slider_page:nth-child(1),
+.promo-slider_input._slider1:checked:disabled ~ .promo-slider_pagination .promo-slider_page:nth-child(1),
+.promo-slider_input._slider2:disabled ~ .promo-slider_pagination .promo-slider_page:nth-child(2),
+.promo-slider_input._slider2:checked:disabled ~ .promo-slider_pagination .promo-slider_page:nth-child(2) {
+	background-color: #666666;
 }
 
 /* PRODUCT ARTICLE */
@@ -1104,7 +1167,7 @@ rain { some values }; - одноименный класс
 }
 
 .product-article_ui {
-	display: block;
+	display: none;
 	position: absolute;
 	top: 44px;
 	left: 41px;
@@ -1219,7 +1282,7 @@ rain { some values }; - одноименный класс
 	font: bold 17px "PT Sans", "Arial", sans-serif;
 	color: #ffffff;
 	text-align: center;
-	background: url("../img/products/misc/bg_price.svg") no-repeat;
+	background: url("../img/products/misc/bg_price.svg") no-repeat #ee3643;
 }
 
 /* BRAND'S LIST */
@@ -1446,6 +1509,18 @@ rain { some values }; - одноименный класс
 	display: block;
 }
 
+.services-switcher_input._delivery:disabled ~ .services-slider_switcher-list .services-slider_btn:nth-child(1),
+.services-switcher_input._delivery:checked:disabled ~ .services-slider_switcher-list .services-slider_btn:nth-child(1),
+.services-switcher_input._guarantee:disabled ~ .services-slider_switcher-list .services-slider_btn:nth-child(2),
+.services-switcher_input._guarantee:checked:disabled ~ .services-slider_switcher-list .services-slider_btn:nth-child(2),
+.services-switcher_input._credit:disabled ~ .services-slider_switcher-list .services-slider_btn:nth-child(3),
+.services-switcher_input._credit:checked:disabled ~ .services-slider_switcher-list .services-slider_btn:nth-child(3) {
+	color: #cccccc;
+	background-color: #999999;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #aaaaaa;
+}
+
 /* ABOUT US */
 
 .about-us.size-content {
@@ -1504,6 +1579,7 @@ rain { some values }; - одноименный класс
 }
 
 .about-us_btn-map {
+	display: block;
 	margin: 5px 0 40px;
 	padding: 0;
 	border: none;
@@ -1593,7 +1669,8 @@ rain { some values }; - одноименный класс
 /* FOOTER DOWNSIDE */
 
 .footer-downside.size-full {
-	padding: 35px 0 30px;
+	padding-top: 35px;
+	padding-bottom: 30px;
 	background-color: #293449;
 }
 
@@ -1915,6 +1992,19 @@ rain { some values }; - одноименный класс
 	width: 100%;
 }
 
+.modal-map_map-full-critical {
+	position: fixed;
+	top: 100px;
+	left:50%;
+	transform: translateX(-50%);
+	display: none;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.modal-map_input:checked + img {
+	display: block;
+}
+
 .modal-feedback-form {
 	display: flex;
 	flex-direction: row;
@@ -1977,4 +2067,10 @@ rain { some values }; - одноименный класс
 .modal-alert_title {
 	font: 30px "Cuprum", "Arial", sans-serif;
 	color: #000000;
+}
+
+/* MODAL WINDOWS: ANIMATION */
+
+.modal-animation {
+
 }

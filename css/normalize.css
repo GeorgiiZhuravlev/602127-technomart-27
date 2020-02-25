@@ -35,6 +35,7 @@ a {
 }
 
 a,
-button {
+button,
+label {
 	cursor: pointer;
 }
