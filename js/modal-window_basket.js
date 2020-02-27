@@ -18,6 +18,8 @@ function OpenModal(evt) {
 	evt.stopPropagation();
 	evt.preventDefault();
 	modalBasketAlert.classList.remove('_vis-off');
+	modalBasketAlert.classList.remove('_animation-close');
+	modalBasketAlert.classList.add('_animation-open');
 	btn_basketOrder.focus();
 }
 
@@ -28,9 +30,11 @@ modalBasketAlert.addEventListener('click', CloseModal);
 
 function CloseModal(evt) {
 	evt.stopPropagation();
-	switch (evt.target.id) {
-		case 'modal-basket-alert_close': modalBasketAlert.classList.add('_vis-off');; break;
-		case 'modal-basket-alert_continue': modalBasketAlert.classList.add('_vis-off');; break;
-		case 'modal_basket-alert': modalBasketAlert.classList.add('_vis-off');; break;
+	if (evt.target.id === 'modal-basket-alert_close' ||
+			evt.target.id === 'modal-basket-alert_continue' ||
+			evt.target.id === 'modal_basket-alert') {
+		setTimeout(function () { modalBasketAlert.classList.add('_vis-off') }, 250);
+		modalBasketAlert.classList.remove('_animation-open');
+		modalBasketAlert.classList.add('_animation-close');
 	}
 }

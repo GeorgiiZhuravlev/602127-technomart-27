@@ -21,10 +21,14 @@ function OpenModal(evt) {
 			case 'modal-map_open':
 				evt.preventDefault();
 				modalMap.classList.remove('_vis-off');
+				modalMap.classList.remove('_animation-close');
+				modalMap.classList.add('_animation-open');
 				btn_mapClose.focus(); break;
 			case 'modal-feedback_open':
 				evt.preventDefault();
 				modalFeedback.classList.remove('_vis-off');
+				modalFeedback.classList.remove('_animation-close');
+				modalFeedback.classList.add('_animation-open');
 
 				var user_name = document.querySelector('[name=user-name]'),
 						user_email = document.querySelector('[name=user-email]'),
@@ -55,9 +59,21 @@ modalFeedback.addEventListener('click', CloseModal);
 function CloseModal(evt) {
 	evt.stopPropagation();
 	switch (evt.target.id) {
-		case 'modal_map': modalMap.classList.add('_vis-off'); break;
-		case 'modal-map_close': modalMap.classList.add('_vis-off'); break;
-		case 'modal_feedback': modalFeedback.classList.add('_vis-off'); break;
-		case 'modal-feedback_close': modalFeedback.classList.add('_vis-off'); break;
+		case 'modal_map': 
+			setTimeout(function () { modalMap.classList.add('_vis-off'); }, 250);
+			modalMap.classList.remove('_animation-open');
+			modalMap.classList.add('_animation-close'); break;
+		case 'modal-map_close':
+			setTimeout(function () { modalMap.classList.add('_vis-off'); }, 250);
+			modalMap.classList.remove('_animation-open');
+			modalMap.classList.add('_animation-close'); break;
+		case 'modal_feedback': 
+			setTimeout(function () { modalFeedback.classList.add('_vis-off'); }, 250);
+			modalFeedback.classList.remove('_animation-open');
+			modalFeedback.classList.add('_animation-close'); break;
+		case 'modal-feedback_close': 
+			setTimeout(function () { modalFeedback.classList.add('_vis-off'); }, 250);
+			modalFeedback.classList.remove('_animation-open');
+			modalFeedback.classList.add('_animation-close'); break;
 	}
 }

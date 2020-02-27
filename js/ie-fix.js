@@ -4,9 +4,11 @@
 var pattern1 = /trident/gi,
 		pattern2 = /msie/gi;
 
-// Определяем браузер IE. Если истина - запускаем скрипт.
+// Определяем браузер IE. Если истина - запускаем скрипт "FixStart".
+// "FixMapPlace" - описан ниже.
 if (pattern1.test(navigator.userAgent) || pattern2.test(navigator.userAgent)) {
  	FixStart();
+ 	FixMapPlace();
 }
 
 // Определяем скрипт.
@@ -52,4 +54,11 @@ function FixStart() {
 			evt.currentTarget.querySelector('.product-article_ui').style.display = 'none';
 		}
 	}
+}
+
+// Фикс расположения окна карты
+
+function FixMapPlace() {
+	var modalMapWindow = document.querySelector('.modal-map.size-content');
+	modalMapWindow.style.right = 'calc(50% - 470px)';
 }

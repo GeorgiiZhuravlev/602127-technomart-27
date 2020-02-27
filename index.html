@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Техномарт: Главная страница</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize-minimized.css">
+	<link rel="stylesheet" href="css/style-minimized.css">
 	<link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext">
 </head>
@@ -53,14 +53,14 @@
 					</div>
 
 					<div class="authorization _no-log-in">
-						<a class="btn-authorization _no-log-in" href="" aria-label="Войти на сайт">
+						<a class="btn-authorization _no-log-in _enter" href="" aria-label="Войти на сайт">
 							<svg class="authorization_login-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
     						<path fill="#32425C" d="M14.875 8.5L6 0v6H0v5h6v6z"/>
     						<path fill="#32425C" d="M16.986 15.01h-5.027V17h5.027c2.178 0 3.004-1.81 3.029-3.026V3.028C19.99 1.811 19.164 0 16.986 0h-5.027v1.99h5.027c.839 0 .992.681 1.01 1.057v10.904c-.017.376-.171 1.059-1.01 1.059z"/>
 							</svg>
 							<p>Войти</p>
 						</a>
-						<a class="btn-authorization _no-log-in" href="" aria-label="Зарегистрироваться на сайте">Регистрация</a>
+						<a class="btn-authorization _no-log-in _reg" href="" aria-label="Зарегистрироваться на сайте">Регистрация</a>
 					</div>
 				</div>
 
@@ -169,10 +169,10 @@
 							<img class="flag-new _vis-off" src="img/products/misc/icon_new.svg" width="60" height="59" alt="Метка нового товара">
 							<img class="product-article_img" src="img/products/products_perforator_bosch-bfg-9000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 9000">
 							<div class="product-article_ui">
-								<a class="product-article_ui-btn _buy" href="" type="button" aria-label="Купить выбранный товар">
+								<a class="product-article_ui-btn _buy" href="" aria-label="Купить выбранный товар">
 									<img class="product-article_icon-buy" src="img/icons/icons_inter/icon_cart.svg" width="15" height="15" aria-hidden="true" alt="">Купить
 								</a>
-								<a class="product-article_ui-btn _bookmark" href="" type="button" aria-label="Добавить в закладки выбранный товар">В закладки</a>
+								<a class="product-article_ui-btn _bookmark" href="" aria-label="Добавить в закладки выбранный товар">В закладки</a>
 							</div>
 							<div class="product-article_info">
 								<h3 class="product-article_title">Перфоратор BOSCH BFG 9000</h3>
@@ -308,7 +308,7 @@
 					</div>
 
 					<ul class="services-slider_item-list">
-						<li>
+						<li class="services-slider_bg _delivery">
 							<div class="services-slider_item">
 								<h3 class="services-slider_title">Доставка</h3>
 								<p class="services-slider_subtitle">
@@ -319,7 +319,7 @@
 								</p>
 							</div>
 						</li>
-						<li>
+						<li class="services-slider_bg _guarantee">
 							<div class="services-slider_item">
 								<h3 class="services-slider_title">Гарантия</h3>
 								<p class="services-slider_subtitle">
@@ -331,22 +331,16 @@
 								</p>
 							</div>
 						</li>
-						<li>
+						<li class="services-slider_bg _credit">
 							<div class="services-slider_item">
 								<h3 class="services-slider_title">Кредит</h3>
 								<p class="services-slider_subtitle">
 									Залезть в долговую яму стало проще!<br> 
 									Кредитные консультанты придут вам на помощь.
 								</p>
-								<a class="btn-standart _red _services-slider _offset" href="" disabled>Отправить заявку</a>
+								<a class="btn-standart _red _services-slider _offset" href="">Отправить заявку</a>
 							</div>
 						</li>
-					</ul>
-
-					<ul class="services-slider_bg-list">
-						<li class="services-slider_bg-item _delivery"></li>
-						<li class="services-slider_bg-item _guarantee"></li>
-						<li class="services-slider_bg-item _credit"></li>
 					</ul>
 				</div>
 			</div>
@@ -388,13 +382,13 @@
 						заехав в наш офис:
 					</p>
 
-					<label class="about-us_btn-map" href="" id="modal-map_open">
+					<label class="about-us_btn-map" id="modal-map_open">
 						<input class="modal-map_input visually-hidden" id="modal-map_open-critical" type="checkbox">
-						<img class="modal-map_map-full-critical" src="img/map/map_full.jpg" width="940" height="447">
+						<img class="modal-map_map-full-critical" src="img/map/map_full.jpg" width="940" height="447" alt="Магазин Техномарт находится по адресу: город Санкт-Петербург, улица Большая Конюшенная, дом 19 дробь 8">
 						<img src="img/map/map_mini.jpg" width="300" height="158" alt="Открыть полноразмерную карту. Магазин Техномарт находится по адресу: город Санкт-Петербург, улица Большая Конюшенная, дом 19 дробь 8">
 					</label>
 
-					<a class="btn-standart _red _about-us2" id="modal-feedback_open" href="" type="button">Заблудились? Напишите нам!</a>
+					<a class="btn-standart _red _about-us2" id="modal-feedback_open" href="">Заблудились? Напишите нам!</a>
 				</div>
 			</div>
 		</section>
@@ -491,7 +485,7 @@
 		<section class="modal-map size-content">
 			<h2 class="visually-hidden">Полноразмерная карта</h2>
 			<button class="btn-cross _modal" id="modal-map_close" type="button" aria-label="Закрыть полноразмерную карту"></button>
-			<iframe class="modal-map_map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d856e93dd55dbb3d9c2c927b9d71ce0b08c25766e1c8177388b5b4cdb6cc9b5&amp;source=constructor" width="940" height="447" frameborder="0"></iframe>
+			<iframe class="modal-map_map" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4d856e93dd55dbb3d9c2c927b9d71ce0b08c25766e1c8177388b5b4cdb6cc9b5&amp;source=constructor" width="940" height="447"></iframe>
 		</section>
 	</div>
 
@@ -500,7 +494,7 @@
 			<h2 class="visually-hidden">Написать нам</h2>
 			<button class="btn-cross _modal" id="modal-feedback_close" type="button" aria-label="Закрыть форму обратной связи"></button>
 
-			<form class="modal _body modal-feedback-form" id="modal-feedback_form" method="post" action="" name="write-us" autocomplete="on">
+			<form class="modal _body modal-feedback-form" id="modal-feedback_form" method="post" action="" name="write-us" autocomplete="off">
 				<label class="modal-feedback_inter" for="modal-feedback-username">Ваше имя:<br>
 					<input id="modal-feedback-username" type="text" name="user-name" placeholder="Имя Фамилия" required>
 				</label>
@@ -533,10 +527,11 @@
 		</section>
 	</div>
 
-	<script src="js/ie-fix.js"></script>
-	<script src="js/modal-windows_index.js"></script>
-	<script src="js/modal-window_basket.js"></script>
-	<script src="js/promo-slider_index.js"></script>
-	<script src="js/count.js"></script>
+	<script src="js/ie-fix-minimized.js"></script>
+	<script src="js/modal-windows_index-minimized.js"></script>
+	<script src="js/modal-window_basket-minimized.js"></script>
+	<script src="js/form-save_index-minimized.js"></script>
+	<script src="js/promo-slider_index-minimized.js"></script>
+	<script src="js/count-minimized.js"></script>
 </body>
 </html>
