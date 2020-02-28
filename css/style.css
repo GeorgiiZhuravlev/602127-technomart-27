@@ -132,7 +132,7 @@ rain { some values }; - одноименный класс
 	opacity: 0.5;
 }
 
-.header-upside_search-wrapper {
+.header-upside_search-form {
 	position: relative;
 }
 
@@ -819,7 +819,7 @@ rain { some values }; - одноименный класс
 	margin-right: 44px;
 }
 
-.sort-type_item + label {
+.sort-type_item {
 	font: 13px "PT Sans", "Arial", sans-serif;
 	color: rgba(0, 0, 0, 0.3);
 	text-decoration: underline;
@@ -828,30 +828,20 @@ rain { some values }; - одноименный класс
 	cursor: pointer;
 }
 
-.sort-type_item:hover + label,
-.sort-type_item:focus + label {
+.sort-type_item:hover,
+.sort-type_item:focus {
 	color: #000000;
 	text-decoration: underline;
 	text-decoration-color: #ee3643;
 }
 
-.sort-type_item:focus + label {
+.sort-type_item:focus {
 	outline: 2px solid #e8cd00;
 }
 
-.sort-type_item:checked + label {
+.sort-type_item._active {
 	color: #ee3643;
 	text-decoration: none;
-}
-
-.sort-type_item:disabled + label {
-	color: rgba(0, 0, 0, 0.3);
-	text-decoration: line-through;
-}
-
-.sort-type_item:checked:disabled + label {
-	color: #ee3643;
-	text-decoration: line-through;
 }
 
 .sort-control {
@@ -1182,8 +1172,14 @@ rain { some values }; - одноименный класс
 	border: 1px solid #eaeaea;
 }
 
-.product-article:hover,
-.product-article:focus,
+.product-article:hover {
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.product-article:focus {
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
 .product-article:focus-within {
 	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5);
 }
@@ -1194,8 +1190,14 @@ rain { some values }; - одноименный класс
 	right: 0;
 }
 
-.product-article:hover .product-article_img,
-.product-article:focus .product-article_img,
+.product-article:hover .product-article_img {
+	opacity: 0;
+}
+
+.product-article:focus .product-article_img {
+	opacity: 0;
+}
+
 .product-article:focus-within .product-article_img {
 	opacity: 0;
 }
@@ -1211,8 +1213,14 @@ rain { some values }; - одноименный класс
 	align-items: center;
 }
 
-.product-article:hover .product-article_ui,
-.product-article:focus .product-article_ui,
+.product-article:hover .product-article_ui {
+	display: flex;
+}
+
+.product-article:focus .product-article_ui {
+	display: flex;
+}
+
 .product-article:focus-within .product-article_ui {
 	display: flex;
 }
@@ -2099,6 +2107,7 @@ rain { some values }; - одноименный класс
 .modal-feedback_inter > input:focus,
 .modal-feedback_inter > textarea:focus {
 	border-color: #ee3643;
+	outline: none;
 }
 
 .modal-alert {
